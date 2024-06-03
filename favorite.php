@@ -1,5 +1,4 @@
 <?php
-//モデルの読み込み
 include_once('./model/functions.php');
 
 if($_POST){
@@ -14,15 +13,15 @@ if($_POST){
         $connection = start_db();
 
         if($favorite == null){
-            $create_date = date("Y-m-d-H-i-s");//現在時刻;
-            $update_date = date("Y-m-d-H-i-s");//現在時刻;
+            $create_date = date("Y-m-d-H-i-s");
+            $update_date = date("Y-m-d-H-i-s");
             //データが存在しない
             $sql = "
             INSERT INTO `favorite`
             (`id`, `board_id`, `user_key`, `delete_flag`, `create_date`, `update_date`)
             VALUES (null , $board_id , '$user_key' , 0 , '$create_date' , '$update_date' )";
-            //クエリの実行
 
+            //クエリの実行
             $result = set_query($connection,$sql);
 
             if($result){
@@ -30,7 +29,7 @@ if($_POST){
             }
 
         }elseif($favorite['delete_flag'] == 0 ){
-            $update_date = date("Y-m-d-H-i-s");//現在時刻;
+            $update_date = date("Y-m-d-H-i-s");
             //削除済み
             $sql = "UPDATE `favorite` 
             SET 
@@ -48,7 +47,7 @@ if($_POST){
             }
 
         }else{
-            $update_date = date("Y-m-d-H-i-s");//現在時刻;
+            $update_date = date("Y-m-d-H-i-s");
             //登録済み
             $sql = "UPDATE `favorite` 
             SET 

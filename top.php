@@ -1,10 +1,6 @@
 <?php
-//モデルの読み込み
 include_once('./model/functions.php');
 
-
-
-    //TOPの処理
     //DBと接続
     $connection = start_db();
     //クエリの作成
@@ -15,5 +11,4 @@ include_once('./model/functions.php');
     $result = end_db($connection);
 
 
-//viewの読み込み
 include_once('./view/view-top.php');

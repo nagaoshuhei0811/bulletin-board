@@ -1,5 +1,4 @@
 <?php
-//モデルの読み込み
 include_once('./model/functions.php');
 
 if(isset($_SESSION["user_key"])){
@@ -24,13 +23,10 @@ if(isset($_SESSION["user_key"])){
                 //登録後
                 header('Location: login.php');
             }
-
-
         }else{
             //エラー表示
         }
     }
 }
 
-//viewの読み込み
 include_once('./view/view-signup.php');

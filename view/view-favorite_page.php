@@ -33,9 +33,9 @@
                 /* 検索結果のデータが返ってくる */
                 $favorite = check_favorite($_SESSION["user_key"]  ,$value['id']);
                 if($favorite == null){
-                    echo "<button type='button'>いいね（登録なし)</button>";
+                    echo "<button type='button'>いいね</button>";
                 }else if($favorite["delete_flag"] == 1){
-                    echo "<button type='button'>いいね（登録解除）</button>";
+                    echo "<button type='button'>いいね 解除</button>";
                 }else{
                     echo "<button type='button'>いいね 解除</button>";
                 }

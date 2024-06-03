@@ -1,23 +1,21 @@
 <?php
-//モデルの読み込み
 include_once('./model/functions.php');
 
 if(isset($_SESSION["user_key"])){
 
     //編集情報が渡されたとき
     if($_POST){
-        //var_dump($_POST);
-
         $id = $_POST["id"];
         $title = $_POST["title"];
         $body = $_POST["body"];
         $user_key = $_POST["user_key"];
-        $date = date("Y/m/d H:i:s"); //現在時刻
+        $date = date("Y/m/d H:i:s");
 
         if($_POST["user_key"] == $_SESSION["user_key"]){
                 //DBと接続
                 $connection = start_db();
 
+                //クエリの作成
                 $sql = "
                 UPDATE `board` 
                 SET 
@@ -28,6 +26,7 @@ if(isset($_SESSION["user_key"])){
                 id = $id
                 ";
 
+                //データの取得
                 $data = set_query($connection,$sql);
 
                 //DBと切断
