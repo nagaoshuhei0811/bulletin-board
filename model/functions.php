@@ -7,7 +7,7 @@ function start_db(){
     $host = 'localhost';        //ホスト
     $username = 'root';         //ユーザ名
     $password = '';             //パスワード
-    $dbname = 'bulletin_board';  //DB名
+    $dbname = 'bulletin-board';  //DB名
     //DBと接続
     $connection = mysqli_connect($host, $username, $password, $dbname);
 
